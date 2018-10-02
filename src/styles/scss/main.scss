@@ -1,0 +1,26 @@
+body {
+    section {
+        padding-top: 20px;
+        padding-left: 30px;
+
+        header {
+            font-weight: bold;
+            font-size: 14pt;
+        }
+    }
+    section.intro {
+        height: 800px;
+        width: 100%;
+        background-image: url("../../images/background-portrait.png");
+        background-size:cover;
+    }
+    h1 {
+        font-weight: bold;
+        padding-left: 40px;
+    }
+    h2 {
+        font-weight: bold;
+        padding-left: 30px;
+        padding-top: 10px;
+    }
+}
