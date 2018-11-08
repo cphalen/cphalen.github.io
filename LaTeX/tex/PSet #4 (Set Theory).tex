@@ -1,0 +1,123 @@
+%*******************************************
+%
+%	This is the Preamble, in which we set the 
+%	global options for the document, such
+%	as the fonts to be used, margins, etc.
+%		
+%******************************************
+
+\documentclass[11pt, leqno]{article}
+\pagestyle{empty}
+\usepackage{palatino}
+\usepackage[letterpaper, left=0.75in, right= 0.75in]{geometry}              
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{enumitem}
+\usepackage{layout}
+
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\setlength{\parindent}{0cm}
+\setlength{\topmargin}{-3cm}
+\setlength{\footskip}{0cm}
+\setlength{\textheight}{10in}
+
+\begin{document}
+
+{\bfseries Advanced Topics} \hspace*{\fill} Campbell Phalen \\
+{\bfseries Analytics PSet \#4} \hspace*{\fill}October 31, 2018
+\vspace{1pc}
+
+\hrulefill
+\vspace{1pc}
+	
+
+{\bfseries Exercise 1.} Let $X$ be a set and $A, B \subseteq X$. Show that the following (\textit{called De Morgan's Laws}) are true.
+\begin{enumerate}[label=(\alph*)]
+	\item $X \setminus (A \cup B) = (X \setminus A) \cap (X \setminus B)$
+	
+	\begin{proof}
+	Suppose also that $x \in X \setminus (A \cup B)$, then $x \notin A \cup B$. Hence, $x \notin A$ and $x \notin B$. Therefore, $x \in (X \setminus A)$ and $x \in (X \setminus B)$. It then follows that $x \in (X \setminus A) \cap (X \setminus B)$.
+	\end{proof}
+	
+	\item $X \setminus (A \cap B) = (X \setminus A) \cup (X \setminus B)$
+	
+	\begin{proof}
+	Suppose that $x \in X \setminus (A \cap B)$, then $x \notin A$ or $x \notin B$. Therefore, $x \in (X \setminus A)$ or $x \in (X \setminus B)$. Namely, $X \in (X \setminus A) \cup (X \setminus B)$.
+	\end{proof}
+\end{enumerate}
+
+{\bfseries Exercise 2.} Let $X$ be a set and $\mathcal{A}$ a family of subsets of $X$. Prove the following statements.
+\begin{enumerate}[label=(\alph*)]
+	\item $X \setminus (\cup \mathcal{A}) = \cap \{X \setminus A | A \in \mathcal{A}\}$
+	
+	\begin{proof}
+	Assume $x \in X \setminus (\cup \mathcal{A})$. Thereby, $x \notin \cup \mathcal{A}$, so we can take any $A \in \mathcal{A}$, and we know that $x \notin A$. This implies that $x \in X \setminus A$ for all $A \in \mathcal{A}$. In other words, $A \in \cap \mathcal{A}$. 
+	\end{proof}
+	
+	\item $X \setminus (\cap \mathcal{A}) = \cup \{X \setminus A | A \in \mathcal{A}\}$
+	
+	\begin{proof}
+	Take $x \in \cup \{X \setminus A | A \in \mathcal{A}\}$. It follows that $x \notin A$ for all $A \in \mathcal{A}$. This means also that $x \in X \setminus A$ for all $A \in \mathcal{A}$. Namely, $x \in \cap (X \setminus A)$ for all $A \in \mathcal{A}$. Rewriting this slightly, we get $x \in X \setminus (\cap \mathcal{A})$.
+	\end{proof}
+\end{enumerate}
+
+{\bfseries Exercise 3.} Let $\{I_j\}_{j \in \mathbb{N}}$ be as in the example above (an indexed family of sets). Describe the followings sets, justify your responses. 
+\begin{enumerate}[label=(\alph*)]
+	\item $\cup_{j \in \mathbb{N}} I_j$
+	
+	This is simply a union of every set in the family $\{I_j\}_{j \in \mathbb{N}}$. Every element in some indexed member of the family $I_j$ will be in the union. We know this by the definition of union of a family of sets
+	\[
+		\cup_{j \in \mathbb{N}} I_j = \{x | x \in I_j \text{ for any } j \in \mathbb{N}\}
+	\]
+	
+	\item $\cap_{j \in \mathbb{N}} I_j$
+	
+	This denotes the intersection of all $I_j$ for all $j \in \mathbb{N}$. This will be the set of all elements which exist in every set of the family $\{I_j\}_{j \in \mathbb{N}}$. This one again follows directly from the definition
+	\[
+		\cap_{j \in \mathbb{N}} I_j = \{x | x \in I_j \text{ for every } j \in \mathbb{N}\}
+	\]
+	
+\end{enumerate}
+
+{\bfseries Exercise 4.} Prove the following statements.
+\begin{enumerate}[label=(\alph*)]
+	\item If $\mathcal{U}$ is a family of open subsets of $\mathbb{R}^n$, then $\cup \mathcal{U}$ is open.
+	
+	\begin{proof}
+	Take any $x \in \cup \mathcal{U}$. We know that $x$ lies within at least one open set $U \in \mathcal{U}$. Within this open set $U$ we can construct an open ball $B(r,x)$ around $x$, such that everything within the open ball is also within $U$. Now because $U \in \mathcal{U}$, we know that $U \subseteq \cup \mathcal{U}$. Therefore also $B(r,x) \subseteq \cup \mathcal{U}$. Hence, we can take any point $x \in \cup \mathcal{U}$ and construct an open ball with $r > 0$ around $x$ that lies entirely within $\cup \mathcal{U}$. This shows that $\cup \mathcal{U}$ is also open.
+	\end{proof}
+	
+	\item If $\mathcal{A}$ is a family of closed sets of $\mathbb{R}^n$, then $\cap \mathcal{A}$ is closed.
+	
+	\begin{proof}
+	Take any $A \in \mathcal{A}$. We know that this $A$ is closed by the given statement. By the definition of closed, we know that $\mathbb{R} \setminus A$ is open. From {\bfseries Exercise 2} (b), we have that
+	\[
+		\mathbb{R} \setminus (\cap \mathcal{A}) = \cup \{\mathbb{R} \setminus A | A \in \mathcal{A}\}
+	\]
+	We know that $\mathbb{R} \setminus A$ is open for all $A \in \mathcal{A}$. Furthermore their union $\cup \{\mathbb{R} \setminus A | A \in \mathcal{A}\}$ is then open by part (a). Therefore,
+	\[
+		\mathbb{R} \setminus (\cap \mathcal{A}) \text{ is open}
+	\]
+	and by the definition of closed in $\mathbb{R}^n$,
+	\[
+		\cap \mathcal{A} \text{ is closed}
+	\]
+	\end{proof}
+	
+	\item $\emptyset$ and $\mathbb{R}^n$ are closed in $\mathbb{R}^n$.
+	
+	\begin{proof}
+	Begin with $\emptyset$. The complement of $\emptyset$ in $\mathbb{R}^n$ is $\mathbb{R}^n \setminus \emptyset = \mathbb{R}^n$. Therefore, as $\mathbb{R}^n$ is open, we know that the complement of $\emptyset$ is open in $\mathbb{R}^n$, and therefore $\emptyset$ is closed in $\mathbb{R}^n$.
+	
+	Second, for $\mathbb{R}^n$. We calculate the complement of $\mathbb{R}^n$ in $\mathbb{R}^n$ to be $\mathbb{R}^n \setminus \mathbb{R}^n = \emptyset$. We have previously shown that $\emptyset$ is open, therefore by the definition of closed, $\mathbb{R}^n$ is closed in $\mathbb{R}^n$.
+	\end{proof}
+
+\end{enumerate}
+\end{document}

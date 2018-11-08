@@ -1,0 +1,180 @@
+%*******************************************
+%
+%	This is the Preamble, in which we set the 
+%	global options for the document, such
+%	as the fonts to be used, margins, etc.
+%		
+%******************************************
+
+\documentclass[11pt, leqno]{article}
+\pagestyle{empty}
+\usepackage{palatino}
+\usepackage[letterpaper, left=0.75in, right= 0.75in]{geometry}              
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{enumitem}
+\usepackage{layout}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\setlength{\parindent}{0cm}
+\setlength{\topmargin}{-3cm}
+\setlength{\footskip}{0cm}
+\setlength{\textheight}{10in}
+
+\begin{document}
+
+{\bfseries Advanced Topics} \hspace*{\fill} Campbell Phalen \\
+{\bfseries Fields and Ordered Fields Exercises} \hspace*{\fill}October 4, 2018
+\vspace{1pc}
+
+\hrulefill
+\vspace{1pc}
+	
+\textbf{Exercise 3.} Let K be an ordered field and $x, y, z \in K$. Prove the following statements.
+
+\begin{enumerate}[label=(\alph*)]
+
+	\item
+	$0 \succ x$, if and only if $-x \prec 0$
+
+	Suppose that
+	\[
+		0 \prec x
+	\]
+	then
+	\begin{align*}
+		0  &\prec x  \\
+		0 - x &\prec x - x \\
+		-x &\prec 0
+	\end{align*}
+	To show the converse, assume
+	\[
+		-x \prec 0
+	\]
+	then, we compute
+	\begin{align*}
+		-x &\prec 0  \\
+		-x + x &\prec 0 + x \\
+		0 &\prec x
+	\end{align*}
+	Hence we can conclude that $0 \prec x \iff -x \prec 0$
+	
+	\item
+	If $x \succ 0$ and $y \prec z$, then $x \cdot z \prec x \cdot y$.
+	
+	Given that $x \succ 0$ and $y \prec z$, we begin with
+	\begin{align*}
+		y &\prec z \\
+		y - y &\prec z - y \\
+		0 &\prec z - y
+	\end{align*}
+	As we know $0 \prec z - y$ and $0 \prec x$, by (FO-4) the following is deduced
+	\begin{align*}
+		0 &\prec x(z - y) \\
+		0 &\prec x \cdot z - (x \cdot y) \\
+		0 + x \cdot y &\prec x \cdot z - (x \cdot y) + x \cdot y \\
+		x \cdot y &\prec x \cdot z
+	\end{align*}
+	
+	\item
+	If $x \prec 0$ and $y \prec z$, then $x \cdot z \prec x \cdot y$.
+	
+	Given that $x \prec 0$ and $y \prec z$, we know that $(-x) \succ 0$, thus by part (b),
+	\begin{align*}
+		y \cdot (-x) &\prec z \cdot (-x) \\
+		- (y \cdot x)  &\prec - (z \cdot x) \\
+		- (y \cdot x)  + y \cdot x + z \cdot x &\prec - (z \cdot x) + y \cdot x + z \cdot x \\
+		z \cdot x &\prec y \cdot x
+	\end{align*}
+	
+	\item If $x \neq 0$, then $x^2 \succ 0$; in particular $1 \succ 0$.
+	
+	By trichotomy (FO-1), we have two cases.
+	
+	Case 1: $x \succ 0$, then by part (b)
+	 \begin{align*}
+		0 &\prec x \\
+		0 \cdot x &\prec x \cdot x \\
+		0 &\prec x^2
+	\end{align*}
+	
+	Case 2:  $x \prec 0$, then $ - x \prec 0$, and by part (b)
+	\begin{align*}
+		0 &\prec (-x) \\
+		0 \cdot (-x) &\prec (-x) \cdot (-x) \\
+		0 &\prec (-x)^2 \\
+		0 &\prec x^2 \\
+	\end{align*}
+	Thus $x^2 \succ 0$. In a special case, if $x = 1$, then $1^2 = 1 \succ 0$. Thus, we know that $1 \succ 0$.
+	
+	\item 
+	If $0 \prec x \prec y$, then $0 \prec \frac{1}{y} \prec \frac{1}{x}$
+	
+	We begin by showing that for any $x \succ 0$, $x^{-1} \succ 0$. We show this by counter example, if $x^{-1} \prec 0$, then $x \cdot x^{-1}$ would be negative, but by definition $x * x^{-1} = 1$ and we've just shown that $1 \succ 0$.
+	
+	Now, as $x, y \succ 0$, $x^{-1}, y^{-1} \succ 0$. Thus, $x^{-1} \cdot y^{-1} >0$, and we can do the following computation
+	\begin{align*}
+		0 &\prec x \prec y \\
+		0 \cdot (x^{-1} \cdot y^{-1}) &\prec x \cdot (x^{-1} \cdot y^{-1}) \prec y \cdot (x^{-1} \cdot y^{-1}) \\
+		0 &\prec 1 \cdot y^{-1} \prec 1 \cdot x^{-1} \\
+		0 &\prec y^{-1} \prec  x^{-1} \\
+		0 &\prec \frac{1}{y} \prec \frac{1}{x}
+	\end{align*}
+	
+\end{enumerate}
+
+\vspace{1pc}
+	
+\textbf{Exercise 4.}
+
+\begin{enumerate}[label=(\alph*)]
+
+	\item
+	Give a definition of \textbf{lower bound} for a non-empty subset of an ordered field.
+	
+	A lower bound for a non-empty subset of $A$ of an ordered field $K$ is any $x \in K$ such that $x \preceq a$ for all $a \in A$.
+	
+	\item
+	Define the \textbf{greatest lower bound} of a non-empty subset of an ordered field.
+	
+	The greatest upper bound for a non-empty subset $A$ of an ordered field $K$ is any $\alpha \in K$ such that $\alpha$ is a lower bound of $A$, and no member of $x \in K$ such that $\alpha \prec x$ is a lower bound of $A$.
+	
+	\item
+	Define what it means for an ordered field to have the \textbf{greatest lower bound property}.
+	
+	An ordered field $K$ is said to have the greatest lower bound property if and only if every non-empty set of $K$ that is bounded below has a greatest lower bound.
+
+\end{enumerate}
+
+\vspace{1pc}
+
+\textbf{Exercise 5.}
+
+\begin{enumerate}[label=(\alph*)]
+
+	\item
+	Let A be a non-empty subset of an ordered field $K$. Show that if $\alpha$ is a least upper bound of A, then for every $x \in K$ such that $x \prec \alpha$, there is some $a \in A$, such that $x \prec a \preceq \alpha$.
+	
+	As $x \prec \alpha$ there must be some value, $a \in A$ that lies between $x$ and $\alpha$. We know this to be true, because if such a space did not exist, then $x$ would be an upper bound of $A$, as there is no value in $A$ greater than $x$. However, $x$ cannot be an upper bound, as $x \prec \alpha$ and $\alpha$ is the least upper bound of $A$.
+	
+	\item
+	Show that if a subset $A$ of an ordered field $K$ has a least upper bound, then the upper bound is unique.
+	
+	First, assume that $A$ has two least upper bounds $\alpha$ and $\beta$. Then, $\alpha \preceq \beta$ as $\alpha$ is the least of the upper bounds. Similarly, $\beta \preceq \alpha$ as $\beta$ is the least of the upper bounds. The only way that both of the previous statements can hold is it equality holds, namely $\alpha = \beta$.
+
+\end{enumerate}
+
+\vspace{1pc}
+
+\textbf{Exercise 6.} Show that if an ordered field $K$ has the least upper bound property, then it also has the greatest lower bound property.
+
+\vspace{1pc}
+
+Given that $K$ has the least upper bound property, assume $A$ is a non-empty set of $K$ which is bounded below. Let $L$ denote the set of lower bounds of $A$. Assuming $A$ is bounded below, we know that $L$ has at least one element. Therefore, as $K$ has the least upper bound property, we know also that the least upper bound of $L$ exists, denote this least upper bound as $\alpha$. As $\alpha$ is the least upper bound of $L$, we know that $ l \preceq \alpha$ for all $l \in L$ by the definition of least upper bound. Hence, as $L$ is defined as the set of all lower bounds of $A$. We know that $\alpha$ is greater than or equal to every lower bound of $A$. This then makes $\alpha$ the greatest lower bound of $A$.
+
+\end{document}

@@ -1,0 +1,213 @@
+%*******************************************
+%
+%	This is the Preamble, in which we set the 
+%	global options for the document, such
+%	as the fonts to be used, margins, etc.
+%		
+%******************************************
+
+\documentclass[11pt, leqno]{article}
+\pagestyle{empty}
+\usepackage{palatino}
+\usepackage[letterpaper, left=0.75in, right= 0.75in]{geometry}              
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{enumitem}
+\usepackage{layout}
+\usepackage[linguistics]{forest}
+
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\setlength{\parindent}{0cm}
+\setlength{\topmargin}{-3cm}
+\setlength{\footskip}{0cm}
+\setlength{\textheight}{10in}
+
+\begin{document}
+
+{\bfseries Advanced Topics} \hspace*{\fill} Campbell Phalen \\
+{\bfseries Analytics PSet \#5} \hspace*{\fill}November 3, 2018
+\vspace{1pc}
+
+\hrulefill
+\vspace{1pc}
+
+\begin{enumerate}
+
+	\item
+	A sequence $\{b_k\}$ is a \textit{subsequence} of a sequence $\{a_n\}$ if and only if there exists an increasing function $\varphi : \mathbb{N} \rightarrow \mathbb{N}$ such that $b_k = a_{\varphi (k)}$ for every $k \in \mathbb{N}$.
+	
+	A sequence ${a_n}$ is said to be \textit{monotonically increasing} (respectively, \textit{monotonically decreasing}) if and only if $a_n \leq a_{n+1}$ (respectively, $a_{n+1} \leq a_n$) for all $n \in \mathbb{N}$. A sequence is said to be monotone if and only if it is either monotonically increasing or monotonically decreasing.
+	
+	Show that every sequence of real numbers has a monotone subsequence.
+	
+	\begin{proof}
+	
+	For every $\{x_i\}$ subsequence of $\mathbb{R}^n$, $\{x_i\}$ either has a largest element or not. That is, there exists some $x_j$ such that $x_j \geq x_i$ for all ${x_i}$, or there does not exists such $x_j$. 
+	
+	\textit{Case I: } such a $x_j$ does not exist.
+	
+	Therefore the sequence is unbounded and finding a subsequence is trivial. Simply define
+	
+	\[
+		\varphi(i) = 
+		\left\{
+        			\begin{array}{ll}
+           			x_i & x_i \geq {x_j} \text{ for all } j \leq i \\
+            			x_{i-1}  &  \text{otherwise}
+        			\end{array}
+    		\right.
+	\]
+	We know this sequence will continue on forever, as $\{x_i\}$ is unbounded above. Thus we can find a monotonically increasing subsequence.
+	
+	\textit{Case II: } such a $x_j$ does exist.
+	
+	Now our argument becomes somewhat recursive. Look at the entire sequence $\{x_i\}$ such that $i > j$. That is, the entire sequence of $\{x_i\}$ after $x_j$. Now we can repeat the same logic, either there is a maximum of the new sequence or there is not. If there exists no maximum, then b \textit{Case I} we have a monotonically increasing subsequence. If there is a maximum we continue to repeat. If there is always a maximum, what we get is a sequence of maximums we denote $\{m_1, m_2,...,m_j\}$. However, we know that each maximum must be less than or equal to the previous by the definition of max. Therefore, this sequence of maximums is monotonically decreasing. Hence, we have found a monotonic subsequence of $\{x_i\}$, showing that a sequence of real numbers $\{x_i\}$ will \textit{always} have a monotone subsequence.
+	\end{proof}
+	
+	\item
+	
+	The following tree (LaTeX forest!) is constructed inductively using the following rule. Begin with $\frac{1}{1}$ at the first level. Suppose that the $m$-th level of the tree has been constructed with $2^{m-1}$ nodes, and each node consists of a fraction of $\frac{i}{j}$. Then each of the $2^{m-1}$ entries at the $m$-th level in the tree produces two children, a left child and a right child; the $2^m$ nodes at the $(m+1)$-th level consist of these. For $\frac{i}{j}$ at the $m$-th level of the tree, the left child is $\frac{i}{i+j}$ and the right child is $\frac{i+j}{j}$.
+	
+	\begin{center}
+		\begin{forest}
+		before typesetting nodes={
+   			where n children=0{%
+      			append={[, edge={dotted, shorten <=8pt} ]}
+   		 }{}
+  		}
+		[$\frac{1}{1}$
+			[$\frac{1}{2}$
+				[$\frac{1}{3}$
+					[$\frac{1}{4}$]
+					[$\frac{4}{3}$]
+				]
+				[$\frac{3}{2}$
+					[$\frac{3}{5}$]
+					[$\frac{5}{2}$]
+				]
+			]
+		[$\frac{2}{1}$
+				[$\frac{2}{3}$
+					[$\frac{2}{5}$]
+					[$\frac{5}{3}$]
+				]
+				[$\frac{3}{1}$
+					[$\frac{3}{4}$]
+					[$\frac{4}{1}$]
+				]
+			]
+		]
+	\end{forest}
+	\end{center}
+	
+	\vspace{5pc}
+	
+	Prove the following statements about the tree.
+	
+	\begin{enumerate}[label=(\alph*)]
+		\item Every fraction $\frac{m}{n}$ that appears in the three is in lowest terms that is, $(m, n) = 1$. (Here, $(m, n)$ denotes the \textit{greatest common divisor} of $m$ and $n$).
+		
+		\begin{proof}
+		We proceed by induction. First, we note that $\frac{1}{1}$ is in lowest possible terms, as $(1,1) = 1$. Now, we take our induction hypothesis to be that $\frac{i}{j}$ is in lowest possible terms, and attempt to show that both $\frac{i}{i+j}$ and $\frac{i+j}{j}$ are also in lowest possible terms. First, we know that $(i, j) = 1$, this means that given some $x,y \in \mathbb{R}$
+		\begin{align*}
+			ix + jy &= 1 \\
+			ix + jy + (xj - xj) &= 1 \\
+			ix + xj + jy -xj &= 1 \\
+			(i + j)x + j(y - x) &= 1
+		\end{align*}
+		Therefore $i + j$ and $j$ are coprime, meaning that $(i + j, j) = 0$. Hence, $\frac{i + j}{i}$ is in lowest terms. Additionally we can compute
+		\begin{align*}
+			ix + jy &= 1 \\
+			ix + jy + (yi - yi) &= 1 \\
+			ix - yj + jy + yi &= 1 \\
+			i(x - y) + (i + j) &= 1
+		\end{align*}
+		Once again, we see similarly that $i$ and $i + j$ are coprime and that $(i, i + j) = 1$. Meaning also that $\frac{i}{i + j}$ is in lowest terms.
+		
+		By induction we can therefore conclude that every element of the tree will be in lowest terms.
+ 		\end{proof}
+		
+		\item Every positive rational number appears somewhere in the tree.
+		
+		\begin{proof}
+		Assume that there were such rational numbers that did not appear somewhere in the tree. If this were the case we pick $q$ to be lowest denominator of any rational number that does not exist in the tree. We then pick $p$ to be the small numerator of numbers which do not appear in the tree that have the denominator $q$. We then have a rational number, $\frac{p}{q}$ which does not exist in the tree. Now, we know that if $\frac{p}{q}$ does not exist in the free, neither can it's parent node, otherwise the parent nodes inclusion in the tree would imply that $\frac{p}{q}$ is in the tree. We then have two cases,
+		
+		\textit{Case I: } $\frac{p}{q}$ is a left child. Thus, by definition of the tree
+		
+		\begin{center}
+		\begin{forest}
+		[$\frac{p}{q - p}$
+			[$\frac{p}{q}$]
+			[$\frac{q}{q - p}$]
+		]
+		\end{forest}
+		\end{center}
+		However, this poses a contradiction as $\frac{p}{q - p}$ is then also not in the tree, but $q - p < q$ and we defined $q$ to the lowest denominator of any rational number that did not exist on the tree. Therefore $\frac{p}{q - p}$ must exist on the tree after all, implying that $\frac{p}{q}$ exists in the tree as well.
+		
+		\textit{Case II: } $\frac{p}{q}$ is a right child. Then,
+		
+		\begin{center}
+		\begin{forest}
+		[$\frac{p - q}{q}$
+			[$\frac{p - q}{p}$]
+			[$\frac{p}{q}$]
+		]
+		\end{forest}
+		\end{center}
+		Once again, we find a contradiction as $\frac{p - q}{q}$ must not be in the tree, but $p - q < p$ and we defined $p$ to be the lowest numerator of any rational number with denominator $q$. However, $\frac{p - q}{q}$ also has denominator $q$ and has a smaller numerator, thus $\frac{p - q}{q}$ exists in the tree and so much $\frac{p}{q}$.
+		\end{proof}
+		
+		\item No rational number appears more than once in the tree.
+		
+		\begin{proof}
+		We will proceed by induction. First we have our base case that $\frac{1}{1}$ only appears in the tree once. This is because $i + j > 1$ as $i, j > 1$. Now we take our induction hypothesis to be that $\frac{i}{j}$ only appears in the tree once, and we need to show that $\frac{i}{i + j}$ and $\frac{i + j}{j}$ also only exist in the three once. However, assume that $\frac{i}{i + j}$ did appear in the tree more than once.
+		
+		\textit{Case I: } $\frac{i + j}{j}$ is a left child.
+		
+		Then it's parent element, $\frac{i}{j}$ would also appear in the tree more than once, but this violates our induction hypothesis, therefore $\frac{i}{i + j}$ must only appear in the tree once. The same goes for $\frac{i + j}{j}$
+		
+		\textit{Case II: } $\frac{i + j}{j}$ is a right child. Then,
+		
+		\begin{center}
+		\begin{forest}
+		[$\frac{i + j}{-i}$
+			[$\frac{i}{-i}$]
+			[$\frac{i + j}{j}$]
+		]
+		\end{forest}
+		\end{center}
+		However, this is also impossible as we are only dealing with the positive rational numbers, therefore $\frac{i + j}{-i}$ cannot exist on the tree. Hence, $\frac{i + j}{j}$ must only appear on the tree once.
+		
+		Similarly, with $\frac{i}{i + j}$.
+		
+		\textit{Case I: } $\frac{i}{i + j}$ is a left child.
+		
+		\begin{center}
+		\begin{forest}
+		[$\frac{-j}{i + j}$
+			[$\frac{i}{i + j}$]
+			[$\frac{-j}{i}$]
+		]
+		\end{forest}
+		\end{center}
+	
+	Once again, this is impossible as this tree contains only the positive rational numbers, therefore $\frac{-j}{i + j}$ cannot be a node of the tree.
+	
+	\textit{Case II: } $\frac{i}{i + j}$ is a right child.
+	
+	Then, $\frac{i}{j}$ is the parent node of $\frac{i}{i + j}$. However, if there are multiple occurrences of $\frac{i}{i + j}$, then it follows that there are multiple occurrences of $\frac{i}{j}$, but this violates our induction hypothesis, and is therefore a contradiction. As a result, we know that  $\frac{i}{i + j}$ must exist only once in the three.
+	
+	By this logic we have shown our inductive step that, given  $\frac{i}{j}$ appears only once on the tree, it follows that $\frac{i + j}{j}$ and $\frac{i}{i + j}$ also appear only once on the tree. We have thus shown that ever rational number appears only once on the tree.
+	\end{proof}
+	
+	\end{enumerate}
+	
+\end{enumerate}
+\end{document}

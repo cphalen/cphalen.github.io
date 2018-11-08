@@ -1,0 +1,128 @@
+%*******************************************
+%
+%	This is the Preamble, in which we set the 
+%	global options for the document, such
+%	as the fonts to be used, margins, etc.
+%		
+%******************************************
+
+\documentclass[11pt, leqno]{article}
+\pagestyle{empty}
+\usepackage{palatino}
+\usepackage[letterpaper, left=0.75in, right= 0.75in]{geometry}              
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{enumitem}
+\usepackage{layout}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\setlength{\parindent}{0cm}
+\setlength{\topmargin}{-3cm}
+\setlength{\footskip}{0cm}
+\setlength{\textheight}{10in}
+
+\begin{document}
+
+{\bfseries Advanced Topics} \hspace*{\fill} Campbell Phalen \\
+{\bfseries Analytics PSet \#3} \hspace*{\fill}October 22, 2018
+\vspace{1pc}
+
+\hrulefill
+\vspace{1pc}
+	
+
+
+\begin{enumerate}
+
+	\item
+	Let $x$ and $y$ be real numbers. Show that there exists a positive integer $N$ such that $Nx > y$.
+	
+	\begin{proof}
+	Define $A = \{nx | n \in \mathbb{Z}\}$, thus $A \neq \emptyset$. Assume that for all $n \in \mathbb{Z}$ such that  $n > 0$, we have $nx \leq y$, thus $y$ is an upper bound of $A$. As $A$ is a set of integers, it has an integral largest element, we call that value $u$. However, it is clear that $u$ cannot be the largest element, as $n(u + 1) = un + n \in A$.  Thus the set $A$ is unbounded and cannot have any upper bound. Hence, for any $n \in \mathbb{Z}$ such that $n > 0$, we can choose $N$ such that $Nx > y$.
+ 	\end{proof}
+	
+	\item
+	Use the result in problem 1 to show that given any two distinct real numbers $a,b$, there is always a rational number $q$ that lies between $a$ and $b$.
+	
+	
+	\begin{proof}
+	Given $a$ and $b$. Consider the set $A = \{\frac{z}{n} | z \in \mathbb{Z}\}$. For each element in $A$, the difference between that element and the next is $\frac{1}{n}$, in other words, the step size between elements is $\frac{1}{n}$. We can demonstrate this as follows
+	\begin{align*}
+		\frac{z+1}{n} - \frac{z}{n} &= \frac{(z+ 1) - z}{n} \\
+		&= \frac{1}{n}
+	\end{align*}
+	Now, using problem 1 we continue. By problem 1, we can pick a $N$ large enough to satisfy the that
+	\[
+		\frac{1}{b-a} < N
+	\]
+	As this is analogous to saying
+	\[
+		N(b-a) > 1
+	\]
+	Now consider the subset $B \subseteq A$, $B = \{\frac{z}{n} \in A | \frac{z}{n} < a\}$. As $B$ is bounded above by $a$ there exists some $\beta = sup(B)$. Because $B$ is entirely integral, we know that $sup(B)$ will also be integral, thus $sup(B) \in B$. Because $\frac{1}{n} > 0$, we know $\frac{1}{n} + \beta > \beta$ and thus $\frac{1}{n} + \beta \notin B$, so $\frac{1}{n} + \beta$ must break the membership role of $B$, namely $\frac{1}{n} + \beta \geq a$. Furthermore, we compute from our previous determination of $N$
+	\begin{align*}
+		\frac{1}{N} &< b - a \\
+		\frac{1}{N} + a &< b - a + a\\
+		\frac{1}{N} + a &< b
+	\end{align*}
+	And because, $\beta \leq a$, we also have,
+	\[
+		\frac{1}{N} + \beta < b
+	\]
+	Hence, $\frac{1}{n} + \beta$ belongs to $(a,b)$. Moreover, because $\frac{1}{N}$ is rational and, $\beta$ must also be rational as $\beta \in B$, we have that $\frac{1}{N} + \beta$ is also rational.
+	\end{proof}
+	
+	\item
+	Let $I_{j} = [a_j,b_j]$ for each $j \in \mathbb{N}$, where for each $j, a_j \leq b_j$ and $I_{j+i} \subseteq I_j$. Show that the intersection $\cap_{j \in \mathbb{N}}I_{j}$ is not empty. Moreover, if we let $\delta_{j} = b_{j} - a_{j}$, and $\delta_{j} \xrightarrow{} 0$ as $j \xrightarrow{} \infty$, show that $\cap_{j \in \mathbb{N}}I_{j}$ contains exactly one point.
+	
+	\begin{proof}
+	We first consider the set $ A = \{a_{j} | j \in \mathbb{N}\}$. For any $a_{i}$, $b_{j}$, we know that $a_{i} \leq b_{j}$. There are two cases, first if $a_{i} \leq a_{j}$ because $a_{j} \leq b_{j}$, we know also  $a_{i} \leq b_{j}$. Secondly, if $a_{j} \leq a_{i}$, then also $b_{i} \leq b_{j}$, thus because $a_{i} \leq b_{i}$ it follows that $a_{i} \leq b_{j}$. Hence, for any $a_{i}$, $b_{j}$, $a_{i} \leq b_{j}$. Thus, it follows that any $b_{j}$ is an upper bound of $A$. As $A$ is bounded above, there must exist a $sup(A)$ that we denote $\alpha$. We know that, by definition, $\alpha \geq a_{j}$ for all $j \in \mathbb{N}\}$. However, we also know that $\alpha \leq b_{j}$, as $b_{j}$ is an upper bound and $\alpha$ is the least upper bound. Thus, we can write
+	\[
+		a_{j} \leq \alpha \leq b_{j}
+	\]
+	Thus the interval $(a_{j}, b_{j})$ for any $j \in \mathbb{N}\}$ must have at least one element. Also, because $I_{j+i} \subseteq I_j$, all $(a_{i}, b_{i}$ for $i < j$ will also have the interval $(a_{j}, b_{j})$ as a subset. Hence, the $\cap_{j \in \mathbb{N}}I_{j} \neq \emptyset$.
+	
+	Continuing with this line of reasoning. We want to show that as $\delta_{j} \xrightarrow{} 0$ and $j \xrightarrow{} \infty$, $\cap_{j \in \mathbb{N}}I_{j}$ has only one element. This is of course the case because as $\delta_{j} \xrightarrow{} 0$, we get that $a = b$, thus
+	\[
+		a_{j} \leq \alpha \leq b_{j}
+	\]
+	Simplifies to
+	\[
+		a_{j} = \alpha = b_{j}
+	\]
+	Thus, we have only one element in the intersection $\cap_{j \in \mathbb{N}}I_{j}$.
+	\end{proof}
+	
+	\item
+	 A sequence ${a_{j}}$ of real numbers is said to be \textit{monotonically increasing} if and only if $a_{j} \leq a_{j+1}$ for each $j \in \mathbb{N}$. Similarly, one defines a \textit{monotonically decreasing} sequence. If a sequence is either monotonically increasing or decreasing, we say that the sequence is \textit{monotone}. Show that a monotone sequence converges if and only if it is bounded.
+	 
+	 \begin{proof}
+	 Let $A = \{a_{1}, a_{2},...\}$ be our monotone sequence.
+	 
+	 First, given that A is a monotone which is bounded. Without loss of generality let's assume A is monotonically increasing. To show that A converges we need to an $\alpha$ which implies that for any $\epsilon > 0$ there exists a $N \in \mathbb{N}$ such that for all $j \in \mathbb{N}$, $j > N$ it is true that $| a_{j} - \alpha | \leq \epsilon$. Now because A is bounded and thus bounded above, A must then have a least upper bound that we call $\alpha$. We claim that given any $\epsilon > 0$ there exists $a_{j} > \alpha - \epsilon$. This must be true, as it were not and $a_{j} \leq \alpha - \epsilon$ then $\alpha - \epsilon$ is an upper bound of $A$ which is less than $\alpha$ and this is a violation of the definition of least upper bound. We then carry out the following calculation
+	 
+	 \begin{align*}
+		a_{j} &> \alpha - \epsilon \\
+		\epsilon &> \alpha - a_{j}
+	\end{align*}
+	Because $\alpha \geq a_{j}$ , we know $\alpha - a_{j} \geq 0$, thus $\alpha - a_{j} = | \alpha - a_{j} |$
+	\begin{align*}
+		\epsilon &> \alpha - a_{j} = | \alpha - a_{j} | \\
+		\epsilon &> | \alpha - a_{j} | = | a_{j}  - \alpha | \\
+		\epsilon &> | a_{j}  - \alpha |
+	\end{align*}
+	Furthermore we know that for all $a_{j}$ such that $i > j$, $a_{j} \leq a_{i}$ because $A$ is monotonically increasing. Thus let $N = j$, then $\epsilon > | a_{i}  - \alpha |$ for all $a_{}i$ such that $i > j$. Thus, $A$ converges on $\alpha$.
+	 
+	 Second, we assume that A is a monotone sequence which is converges. As A converges we know that there exists some $\beta$ such that for any $\epsilon > 0$ we can find an $N \in \mathbb{N}$ which implies that for all $j > N$ we have also that $| a_{j}  - \beta | < \epsilon$. Now, because A isa monotonically increasing sequence, we also have that for any $i < k$, $a_{k} \leq a_{j}$. Hence, when $i \leq N$, we have that $a_{i} \leq a_{j} \leq \beta$, and for $i > N$ we also have that $a_{i} \leq \beta$ by the definition of convergence. Combining these two inequalities we get that $a_{i} \leq \beta$ for all $a_{i} \in A$. Thus A is bounded above by $\beta$. Additionally, A is bounded below by $a_{1}$ because, once again, A is monotonically increasing, thus $a_{1} \leq a_{i}$ for all $a_{i} \in A$. Finally we have, $a_{1} \leq a_{i} \leq \beta$ for all $a_{i} \in A$ thus A is bounded.
+	 
+	 \end{proof}
+	
+\end{enumerate}
+
+\end{document}

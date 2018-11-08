@@ -1,0 +1,108 @@
+%*******************************************
+%
+%	This is the Preamble, in which we set the 
+%	global options for the document, such
+%	as the fonts to be used, margins, etc.
+%		
+%******************************************
+
+\documentclass[11pt]{article}
+\pagestyle{empty}
+\usepackage{palatino}
+\usepackage[letterpaper, left=0.75in, right= 0.75in]{geometry}              
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{enumitem}
+\usepackage{layout}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\setlength{\parindent}{0cm}
+\setlength{\topmargin}{-3cm}
+\setlength{\footskip}{0cm}
+\setlength{\textheight}{10in}
+
+
+
+\begin{document}
+
+%\layout
+	{\bfseries Advanced Topics} \hspace*{\fill} Campbell Phalen \\
+	{\bfseries Additional Problems for Chapter 1 of Lang} \hspace*{\fill}September 22, 2018
+	\vspace{1pc}
+
+	\hrulefill
+	\vspace{1pc}
+ 
+8. Recall from the discussion on pp.18-20 of Lang that an \textit{open ball} of radius \textit{r} about $x \in \mathbb{R}^n$ consists of the set of points $y \in \mathbb{R}^n$ such that $\|y-x\| < r$. We denote the open ball of radius $r$ about $x$ by $B(x,r)$. A set $U$ of points in $\mathbb{R}^n$ is said to be \textit{open} if and only if for each $x \in U$ there exists some $r > 0$ such that $B(x,r) \subseteq U$; that is, for some radius $r > 0$ the open ball $B(x,r)$ about $x$ lies entirely in the set $U$, and as such, contains only points of $U$.
+
+\vspace{1pc}
+
+\begin{enumerate}[label=(\alph*)]
+
+	\item 
+
+	For $n = 1$, show that the set of open balls in $\mathbb{R}^1 = \mathbb{R}$ is precisely the set of open intervals $(a,b),$ with $a < b$.
+
+	We must show that for any one interval there exists a corresponding open ball. If we take any interval $(a,b)$ where $a < b$, then we can also create an analogous open ball. Let the center of the ball $P = \frac{(a + b)}{2}$ so that P is the midpoint of the interval $(a, b)$. Now, let the radius of the ball $r = b - a$. We know that $a < b$ so $b - a$ must express the radius of the interval $(a,b)$. We have thus shown that an open ball $B(P,r)$ can be created for each interval $(a,b)$ in $\mathbb{R}$
+	
+	\item
+	
+	Show that an open interval in $\mathbb{R}$ is open, according to the definition above.
+	
+	Pick any point $p \in (a,b)$ where $a,b \in \mathbb{R}$ and $a < b$ this will be the center of our open ball. Now, P must be closer to one of the two endpoints, so we take $R = min(a - p, b - p)$. Thus, $R$ represents the distance between $p$ and the closer endpoint of the interval $(a,b)$. Hence, we can simply take the radius of our ball $r = \frac{R}{2}$. We can now construct a ball $B(p,r)$ at any point $p$ along any interval $(a,b)$. Thus, any interval $(a,b)$ in $\mathbb{R}$ is open.
+	
+	\item
+	
+	Show that, in general, an open ball in $\mathbb{R}^n$ is open, according to the definition above.
+	
+	Pick some point p such that $p \in B(c,R)$ where $c$ is the center of the open ball in $\mathbb{R}^n$ and R is the radius of the open ball. Now, the distance between $p$ and $c$ must be less than $R$ by the definition of a ball. We can take $d = \|  p - c \|$, and we know that $d < R$. Now we simply take the number $r'  = | d - R |$ which is the shortest distance between $p$ and the edge of the open ball. Take $r = \frac{r'}{2}$ and we have a distance we know must be less than the distance from $p$ to the edge of the circle. Thus, all points in $B(p,r)$ must also fall within $B(c,R)$ and $B(c,R)$ must be open.
+	
+	\item
+	
+	Show that the empty set and $\mathbb{R}^n$ are both open sets in $\mathbb{R}^n$.
+	
+	Let's begin with the empty set. A set is open if all points within the set can have a ball $B(p,r)$ constructed about them such that all points in $B(p,r)$ are also in the original set. As the empty has not constituents, it satisfies this requirement. There are no elements within the empty set that violate the theorem. Now for $\mathbb{R}^n$, any point $p \in \mathbb{R}^n$ can be matched with and $r$ to create a open ball $B(p,r)$ of which every element is also within $\mathbb{R}^n$. As there is no possible way to construct an open ball $B(p,r)$ where $p \in \mathbb{R}^n$ and $r$ is some real number, $\mathbb{R}^n$ must be open.
+	
+	\item
+	
+	Show that a set consisting of a single point in $\mathbb{R}^n$ is not open. More generally, show that a non-empty set containing finitely many points is not open.
+	
+	For any set of numbers that has finitely many elements, we must be able to select some element $p$ in our set of numbers and some number $r$ that can be infinitely large, such that the open ball $B(p,r)$ will contain elements that are not within the finite set we have been given.
+	
+	\item
+	
+	Show that if $U_1$ and $U_2$ are open sets in $\mathbb{R}^n$, then $U_1 \cap U_2$ must also be open.
+	
+	Let's take $W = U_1 \cap U_2$, and some point $P \in W$. Now, as $P$ is in $U_1$ and $U_1$ is open, there exists some open ball $B(P,r_1)$ such that all points in $B(P,r_1)$  are also in $U_1$. Furthermore, as $P$ is is in $U_2$ and $U_2$ is open, there also exists some open ball $B(P,r_2)$ such that all points in $B(P,r_2)$ are in $U_2$. Now, we simply take $r = min(r_1,r_2)$, so that all points in $B(p,r)$ are necessarily in $U_1$ as well as $U_2$. Thus, $W = U_1 \cap U_2$ is open. Additionally, if $W = \emptyset$ then $W$ is still open as we've proved that the empty set is open.
+	
+	\item
+	
+	Show that the intersection of any finite collection of open sets is also open in $\mathbb{R}^n$.
+	
+	This is actually fairly simple. We've already shown above that the intersection of any two open sets in $\mathbb{R}^n$ is open. Now, we simple expand to any finite number of open sets. if we have $n$ open sets, we can repeat the process above to get $r_1,r_2,...,r_{n-1},r_n$ for different radii of open balls around $P$. Now we can take $min(r_1,r_2,...,r_{n-1},r_n)$ to get the smallest radius $r$ and construct the open ball $B(P,r)$ such that all points in $B(P,r)$ are also in all of the finite open sets and thus in their intersection.
+	
+	\item
+	
+	Show that the intersection of infinitely many open sets needs not be open.
+	
+	Consider $\lim_{n\to0} {x | x \in (-n,n)}$. Once we allow for there to be infinitely many open sets, their intersection becomes infinitely specific. In this case the end result will be a set $S = {0}$ which would of course be a closed set. Hence, not all intersections of infinitely many open sets need be open.
+	
+	\item
+	
+	Show that a line is not open in $\mathbb{R}^2$.
+	
+	Take some point on the line $P$ with coordinates $(a,b)$. We can write the equation of the line parametrically as $X = P + Mt$. Now we construct any open ball $B(P,r)$ about $P$. There must exist some point $Z = (a + \frac{r}{2}, b)$. This point cannot exist on the line unless $M = (1,0)$ or some scalar multiple, if this is the case instead take $Z = (a, b + \frac{r}{2})$. Either way, the point is that we can find a point within $B(P,r)$ for any $r > 0$ that is not on the line. Thus, the line in $\mathbb{R}^2$ must not be open.
+	
+	\item
+	
+	Show that a plane is not open in $\mathbb{R}^2$.
+	
+	Take some point $P$ to be on the plane $ax + by + cz = d$ with normal vector $N = (a,b,c)$. Now, we can construct any open ball $B(P,r)$ of any $r > 0$. We can also create a unit vector $U = \frac{N}{\| N \|}$ so that $U$ is in the direction $N$. Now we find the point $P' = P + U \cdot (\frac{r}{2})$. This point $P`$ cannot be in the given plane because it have been shifted up by a scalar of the normal vector, but it is still within the open ball $B(P,r)$, thus we have shown that for any $r > 0$ there will be a point in $B(P,r)$ not contained within the plane. Hence, the plane is not open.
+	
+\end{enumerate}
+\end{document}  
