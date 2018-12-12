@@ -7,7 +7,7 @@ literature that has changed the world!
 */
 
 $.ajax({
-    url:'http://cphalen.github.io/Shakespeare/plays/Hamlet_Entire Play.html',
+    url:'http://cphalen.github.io/Shakespeare/plays/Hamlet_ Entire Play.html',
         type:'GET',
         success: function(data){
             console.log(data);
