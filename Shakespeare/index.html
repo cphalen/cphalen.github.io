@@ -27,9 +27,21 @@
     <section class="text-center">
         <h2>Shakespeare Quote Game</h2>
     </section>
-    <br></br>
 
-    <section id="quote">
+    <section id="difficulty" class="text-center">
+        <h4>
+            Difficulty
+        </h4>
+        <section class="text-center">
+            <button class="btn btn-primary" type="submit" onclick="populateQuote(1);">Easy</button>
+            <button class="btn btn-primary" type="submit" onclick="populateQuote(2);">Medium</button>
+            <button class="btn btn-primary" type="submit" onclick="populateQuote(3);">Difficult</button>
+        </section>
+    </section>
+
+    <section>
+        <pre id="quoteSpace">
+        </pre>
     </section>
 
 </body>
