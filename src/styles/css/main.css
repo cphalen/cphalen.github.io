@@ -45,7 +45,6 @@ body section.shakespeare {
   body section.shakespeare section {
     padding-top: 3px; }
 body select#playSelect {
-  margin: 0 auto;
-  margin-bottom: 8px; }
+  margin-bottom: 10px; }
 
 /*# sourceMappingURL=main.css.map */
