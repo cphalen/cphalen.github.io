@@ -132,6 +132,10 @@ function getLine(difficulty) {
     while(true) {
         max = Object.keys(content).length;
         random = getRandomInt(max);
+        console.log(random)
+        console.log(content[random])
+        console.log(difficulty)
+        console.log(max)
         if (getDifficulty(content[random]) == difficulty) {
             console.log(random)
             console.log(content[random])
