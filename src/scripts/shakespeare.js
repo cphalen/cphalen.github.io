@@ -50,8 +50,6 @@ function main(text) {
     // Get body of html page containing play data
     body = play.getElementsByTagName("body")[0];
 
-    console.log(body)
-
     act = "";
     scene = "";
     pass = true;
@@ -101,8 +99,6 @@ function main(text) {
             pass = true;
         }
     }
-
-    console.log(content)
 }
 
 function getRandomInt(max) {
@@ -110,8 +106,6 @@ function getRandomInt(max) {
 }
 
 function getDifficulty(line) {
-    console.log(content)
-
     numbers  = line["BeginningLine"].split(".");
     start    = parseInt(numbers[numbers.length - 1]);
     numbers  = line["EndingLine"].split(".");
@@ -133,15 +127,7 @@ function getLine(difficulty) {
     while(true) {
         max = Object.keys(content).length;
         random = getRandomInt(max);
-        console.log(random)
-        console.log(content[random])
-        console.log(difficulty)
-        console.log(max)
         if (getDifficulty(content[random]) == difficulty) {
-            console.log(random)
-            console.log(content[random])
-            console.log(difficulty)
-            console.log(max)
             return content[random];
         };
     }
@@ -149,11 +135,11 @@ function getLine(difficulty) {
 
 currentLine = null;
 
-function populateQuote(difficulty) {
+function populateQuote(difficulty) { 
     line = getLine(difficulty);
     // So that the solution persists
     currentLine = line;
 
     pre = $("pre#quoteSpace")[0];
-    pre.textContent = line["text"];
+    pre.textContent = line["Text"];
 }

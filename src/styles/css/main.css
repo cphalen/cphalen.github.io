@@ -24,5 +24,11 @@ body ul.nav.nav-tabs li {
   margin-left: 15px; }
 body section section.row button {
   margin: 10px; }
+body pre#quoteSpace {
+  display: block;
+  height: 500px;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto; }
 
 /*# sourceMappingURL=main.css.map */
