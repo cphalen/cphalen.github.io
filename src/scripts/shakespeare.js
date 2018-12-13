@@ -140,7 +140,7 @@ function getLine(difficulty) {
     // Continue searching until we get a line
     // of the proper difficulty
     while(true) {
-        max = Object.keys(content).length;
+        max = Object.keys(content[playName]).length;
         random = getRandomInt(max);
         if (getDifficulty(content[playName][random]) == difficulty) {
             return content[playName][random];
