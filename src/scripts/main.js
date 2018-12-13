@@ -7,8 +7,6 @@ function setState(state) {
         stateElement = document.getElementsByClassName(states[i])[0];
         buttonClassName = states[i] + "-button";
         button = document.getElementsByClassName(buttonClassName)[0];
-        console.log(buttonClassName);
-        console.log(states[i] + " != " + state);
         if(states[i] == state) {
             stateElement.style.display = "block";
             button.className = ACTIVE_CLASSNAME + " " + buttonClassName;
