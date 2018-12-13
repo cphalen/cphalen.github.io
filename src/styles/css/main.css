@@ -29,6 +29,16 @@ body pre#quoteSpace {
   height: 400px;
   width: 500px;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  overflow: scroll;
+  overflow-x: auto;
+  /*
+  To allow for horizontal text wraps
+  */
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word; }
 
 /*# sourceMappingURL=main.css.map */
