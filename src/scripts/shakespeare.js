@@ -41,19 +41,14 @@ function cutBrs(text) {
 }
 
 function main(text) {
-    console.log(text);
     text = cutHead(text);
     text = cutBrs(text);
 
     parser = new DOMParser();
     play = parser.parseFromString(text,"text/xml");
 
-    console.log(play);
-
     // Get body of html page containing play data
     body = play.getElementsByTagName("body")[0];
-
-    console.log(body);
 
     act = "";
     scene = "";
@@ -104,6 +99,8 @@ function main(text) {
             pass = true;
         }
     }
+
+    console.log(content)
 }
 
 function getRandomInt(max) {
@@ -111,6 +108,8 @@ function getRandomInt(max) {
 }
 
 function getDifficulty(line) {
+    console.log(content)
+
     numbers  = line["BeginningLine"].split(".");
     start    = parseInt(numbers[numbers.length - 1]);
     numbers  = line["EndingLine"].split(".");
