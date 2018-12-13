@@ -19,8 +19,17 @@ $.ajax({
 // keep it global to ensure that it persists
 content = {}
 
+// Cut out head becuase some of the links that are left unopen
+// cause problems for the parser
+function cutHead(text) {
+    start = text.indexOf("<head>");
+    end = text.indexOf("</head>")
+    return (text.substring(0, start) + text.substring(end + "</head>".length));
+}
+
 function main(text) {
     console.log(text);
+    text = cutHead(text);
     parser = new DOMParser();
     play = parser.parseFromString(text,"text/xml");
 
