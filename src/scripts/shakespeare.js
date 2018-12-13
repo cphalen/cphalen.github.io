@@ -82,7 +82,7 @@ function main(text) {
                 "Text": "\n" //Initalize to start with an endline -- just removes some issues
             }
             pass = false;
-        } else if(current.tagName.toLowerCase(); == "h3") {
+        } else if(current.tagName.toLowerCase() == "h3") {
             if(current.textContent.includes("ACT")) {
                 // This works because the numeral 'I', 'II', 'IV', etc.
                 // Always comes directly after the first space
