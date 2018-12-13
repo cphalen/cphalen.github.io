@@ -66,8 +66,8 @@ function main(text) {
         current = body.children[i]
         if(current.tagName.toLowerCase() == "blockquote" && pass == false) {
             lines = current.getElementsByTagName("a");
-            content[currentSpeech]["BeginningLine"] = lines[0].name;
-            content[currentSpeech]["EndingLine"] = lines[lines.length - 1].name;
+            content[currentSpeech]["BeginningLine"] = lines[0].getAttribute("name");
+            content[currentSpeech]["EndingLine"] = lines[lines.length - 1].getAttribute("name");
             for(var j = 0; j < lines.length; j++) {
                 content[currentSpeech]["Text"] += lines[j].textContent + "\n";
             }
