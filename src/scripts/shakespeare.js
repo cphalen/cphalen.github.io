@@ -6,24 +6,20 @@ literature that has changed the world!
 
 */
 
-function getPlay(playName)
-    $.ajax({
-        url:'https://cphalen.github.io/Shakespeare/plays/' + playName,
-            type:'GET',
-            success: function(data){
-                main(data);
-            }
-    });
-}
+$.ajax({
+    url:'https://cphalen.github.io/Shakespeare/plays/The Tempest_ Entire Play.html',
+        type:'GET',
+        success: function(data){
+            main(data);
+        }
+});
+
 
 // We will continue to pull lines from content, so we
 // keep it global to ensure that it persists
 content = {}
 
 function main(text) {
-    currentPlay = "The Tempest_ Entire Play.html";
-    text = getPlay(currentPlay);
-
     parser = new DOMParser();
     play = parser.parseFromString(text,"text/xml");
 
@@ -33,7 +29,6 @@ function main(text) {
     body = play.getElementsByTagName("body")[0];
 
     console.log(body);
-
 
     act = "";
     scene = "";
