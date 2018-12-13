@@ -10,9 +10,18 @@ $.ajax({
     url:'https://cphalen.github.io/Shakespeare/plays/The Tempest_ Entire Play.html',
         type:'GET',
         success: function(data){
-            main(data);
+            main(data, "The Tempest");
         }
 });
+
+$.ajax({
+    url:'https://cphalen.github.io/Shakespeare/plays/Hamlet_ Entire Play.html',
+        type:'GET',
+        success: function(data){
+            main(data, "Hamlet");
+        }
+});
+
 
 
 // We will continue to pull lines from content, so we
@@ -40,7 +49,7 @@ function cutBrs(text) {
     }
 }
 
-function main(text) {
+function main(text, playName) {
     text = cutHead(text);
     text = cutBrs(text);
 
@@ -50,9 +59,10 @@ function main(text) {
     // Get body of html page containing play data
     body = play.getElementsByTagName("body")[0];
 
-    act = "";
-    scene = "";
-    pass = true;
+    act               = "";
+    scene             = "";
+    pass              = true;
+    content[playName] = {}
     currentSpeech = 0
     for(var i = 0; i < body.children.length; i++) {
         // Go from blockquote -> a -> h3 because
@@ -64,14 +74,14 @@ function main(text) {
         current = body.children[i]
         if(current.tagName.toLowerCase() == "blockquote" && pass == false) {
             lines = current.getElementsByTagName("a");
-            content[currentSpeech]["BeginningLine"] = lines[0].getAttribute("name");
-            content[currentSpeech]["EndingLine"] = lines[lines.length - 1].getAttribute("name");
+            content[playName][currentSpeech]["BeginningLine"] = lines[0].getAttribute("name");
+            content[playName][currentSpeech]["EndingLine"] = lines[lines.length - 1].getAttribute("name");
             for(var j = 0; j < lines.length; j++) {
-                content[currentSpeech]["Text"] += lines[j].textContent + "\n";
+                content[playName][currentSpeech]["Text"] += lines[j].textContent + "\n";
             }
         } else if(current.tagName.toLowerCase() == "a"){
             currentSpeech++;
-            content[currentSpeech] = {
+            content[playName][currentSpeech] = {
                 "ACT": act,
                 "SCENE": scene,
                 "Speaker": current.textContent,
@@ -121,14 +131,19 @@ function getDifficulty(line) {
     }
 }
 
+function getPlayName() {
+    return $("select#playSelect")[0].value
+}
+
 function getLine(difficulty) {
+    playName = getPlayName();
     // Continue searching until we get a line
     // of the proper difficulty
     while(true) {
         max = Object.keys(content).length;
         random = getRandomInt(max);
-        if (getDifficulty(content[random]) == difficulty) {
-            return content[random];
+        if (getDifficulty(content[playName][random]) == difficulty) {
+            return content[playName][random];
         };
     }
 }

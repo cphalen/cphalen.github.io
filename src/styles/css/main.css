@@ -40,5 +40,12 @@ body pre#quoteSpace {
   white-space: -pre-wrap;
   white-space: -o-pre-wrap;
   word-wrap: break-word; }
+body section.shakespeare {
+  padding-top: 3px; }
+  body section.shakespeare section {
+    padding-top: 3px; }
+body select#playSelect {
+  margin: 0 auto;
+  margin-bottom: 8px; }
 
 /*# sourceMappingURL=main.css.map */

@@ -64,4 +64,18 @@ body {
         white-space: -o-pre-wrap;
         word-wrap: break-word;
     }
+
+    section.shakespeare {
+        padding-top: 3px;
+
+        section {
+            padding-top: 3px;
+        }
+
+    }
+
+    select#playSelect {
+        margin: 0 auto;
+        margin-bottom: 8px;
+    }
 }

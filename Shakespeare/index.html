@@ -28,14 +28,22 @@
         <h2>Shakespeare Quote Game</h2>
     </section>
 
-    <section id="difficulty" class="text-center">
-        <h4>
-            Difficulty
-        </h4>
+    <hr></hr>
+
+    <section id="play" class="text-center shakespeare">
+        <h5>Play</h5>
+        <select id="playSelect" class="form-control col-md-2">
+            <option>The Tempest</option>
+            <option>Hamlet</option>
+        </select>
+    </section>
+
+    <section id="difficulty" class="text-center shakespeare">
+        <h5>Difficulty</h5>
         <section class="text-center">
-            <button class="btn btn-primary" type="submit" onclick="populateQuote(1);">Easy</button>
-            <button class="btn btn-primary" type="submit" onclick="populateQuote(2);">Medium</button>
-            <button class="btn btn-primary" type="submit" onclick="populateQuote(3);">Difficult</button>
+            <button class="btn btn-sm btn-primary" type="submit" onclick="populateQuote(1);">Easy</button>
+            <button class="btn btn-sm btn-primary" type="submit" onclick="populateQuote(2);">Medium</button>
+            <button class="btn btn-sm btn-primary" type="submit" onclick="populateQuote(3);">Difficult</button>
         </section>
     </section>
 
