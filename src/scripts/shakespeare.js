@@ -50,11 +50,14 @@ function main(text) {
     // Get body of html page containing play data
     body = play.getElementsByTagName("body")[0];
 
+    console.log(body)
+
     act = "";
     scene = "";
     pass = true;
     currentSpeech = 0
     for(var i = 0; i < body.children.length; i++) {
+        conosle.log("here")
         // Go from blockquote -> a -> h3 because
         // this is the order of frequency that the
         // tags occur. This increases efficency for
