@@ -27,9 +27,24 @@ function cutHead(text) {
     return (text.substring(0, start) + text.substring(end + "</head>".length));
 }
 
+// Cut out <br> becuase it is unclosed and messes with parser
+function cutBrs(text) {
+    index = 0
+    while(true) {
+        index = text.indexOf("<br>");
+        if(index == -1) {
+            return text;
+        }
+
+        text =  (text.substring(0, index) + text.substring(index + "<br>".length));
+    }
+}
+
 function main(text) {
     console.log(text);
     text = cutHead(text);
+    text = cutBrs(text);
+    
     parser = new DOMParser();
     play = parser.parseFromString(text,"text/xml");
 
