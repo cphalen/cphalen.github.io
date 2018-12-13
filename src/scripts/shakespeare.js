@@ -157,5 +157,5 @@ function checkGuess() {
         pre.textContent = "I'm sorry -- that's not quite right. It's actually " + currentLine["Speaker"] + " in ACT " + currentLine["ACT"] + " SCENE " + currentLine["SCENE"] + " The quote is from lines " + currentLine["BeginningLine"] + " to " + currentLine["EndingLine"];
     }
 
-    pre.textContent += "\n\n To play again select a difficulty!"
+    pre.textContent += "\n\nTo play again select a difficulty!"
 }
