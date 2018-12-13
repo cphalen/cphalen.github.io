@@ -20,6 +20,7 @@ $.ajax({
 content = {}
 
 function main(text) {
+    console.log(text);
     parser = new DOMParser();
     play = parser.parseFromString(text,"text/xml");
 
