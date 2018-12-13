@@ -151,7 +151,7 @@ function checkGuess() {
         return;
     }
     characterGuess = $("input#characterGuess")[0].value;
-    if(characterGuess == currentLine["Speaker"]) {
+    if(characterGuess.toLowerCase() == currentLine["Speaker"].toLowerCase()) {
         pre.textContent = "Nice job! You're absolutely correct. That's " + currentLine["Speaker"] + " in ACT " + currentLine["ACT"] + " SCENE " + currentLine["SCENE"] + " The quote is from lines " + currentLine["BeginningLine"] + " to " + currentLine["EndingLine"];
     } else {
         pre.textContent = "I'm sorry -- that's not quite right. It's actually " + currentLine["Speaker"] + " in ACT " + currentLine["ACT"] + " SCENE " + currentLine["SCENE"] + " The quote is from lines " + currentLine["BeginningLine"] + " to " + currentLine["EndingLine"];
