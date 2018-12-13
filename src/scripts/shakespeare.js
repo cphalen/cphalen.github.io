@@ -135,11 +135,25 @@ function getLine(difficulty) {
 
 currentLine = null;
 
-function populateQuote(difficulty) { 
+// Will be referenced globally
+pre = $("pre#quoteSpace")[0];
+
+function populateQuote(difficulty) {
     line = getLine(difficulty);
     // So that the solution persists
     currentLine = line;
 
-    pre = $("pre#quoteSpace")[0];
     pre.textContent = line["Text"];
+}
+
+function checkGuess() {
+    if(currentLine == null) {
+        return;
+    }
+    characterGuess = $("input#characterGuess")[0].value;
+    if(characterGuess == currentLine["Speaker"]) {
+        pre.textContent = "Nice job! You're absolutely correct. That's " + currentLine["Speaker"] + " in act " + currentLine["ACT"] " scene " + currentLine["SCENE"] + " from line " + currentLine["BeginningLine"] + " to line " + currentLine["EndingLine"];
+    } else {
+        pre.textContent = "I'm sorry -- that's not quite right. It's actually " + currentLine["Speaker"] + " in act " + currentLine["ACT"] " scene " + currentLine["SCENE"] + " from line " + currentLine["BeginningLine"] + " to line " + currentLine["EndingLine"];
+    }
 }
