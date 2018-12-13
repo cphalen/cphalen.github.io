@@ -44,7 +44,7 @@ function main(text) {
     console.log(text);
     text = cutHead(text);
     text = cutBrs(text);
-    
+
     parser = new DOMParser();
     play = parser.parseFromString(text,"text/xml");
 
@@ -133,6 +133,10 @@ function getLine(difficulty) {
         max = Object.keys(content).length;
         random = getRandomInt(max);
         if (getDifficulty(content[random]) == difficulty) {
+            console.log(random)
+            console.log(content[random])
+            console.log(difficulty)
+            console.log(max)
             return content[random];
         };
     }
