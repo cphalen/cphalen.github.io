@@ -64,15 +64,14 @@ function main(text) {
         // going to be incorrect
 
         current = body.children[i]
-        if(current.tagName == "BLOCKQUOTE" && pass == false) {
+        if(current.tagName.toLowerCase() == "blockquote" && pass == false) {
             lines = current.getElementsByTagName("a");
             content[currentSpeech]["BeginningLine"] = lines[0].name;
             content[currentSpeech]["EndingLine"] = lines[lines.length - 1].name;
             for(var j = 0; j < lines.length; j++) {
                 content[currentSpeech]["Text"] += lines[j].textContent + "\n";
             }
-            console.log(content)
-        } else if(current.tagName == "A"){
+        } else if(current.tagName.toLowerCase() == "a"){
             currentSpeech++;
             content[currentSpeech] = {
                 "ACT": act,
@@ -83,7 +82,7 @@ function main(text) {
                 "Text": "\n" //Initalize to start with an endline -- just removes some issues
             }
             pass = false;
-        } else if(current.tagName == "H3") {
+        } else if(current.tagName.toLowerCase(); == "h3") {
             if(current.textContent.includes("ACT")) {
                 // This works because the numeral 'I', 'II', 'IV', etc.
                 // Always comes directly after the first space
