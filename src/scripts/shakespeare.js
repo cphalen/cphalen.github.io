@@ -57,7 +57,6 @@ function main(text) {
     pass = true;
     currentSpeech = 0
     for(var i = 0; i < body.children.length; i++) {
-        conosle.log("here")
         // Go from blockquote -> a -> h3 because
         // this is the order of frequency that the
         // tags occur. This increases efficency for
@@ -72,6 +71,7 @@ function main(text) {
             for(var j = 0; j < lines.length; j++) {
                 content[currentSpeech]["Text"] += lines[j].textContent + "\n";
             }
+            console.log(content)
         } else if(current.tagName == "A"){
             currentSpeech++;
             content[currentSpeech] = {
