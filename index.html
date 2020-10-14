@@ -1,133 +1,369 @@
 <!DOCTYPE html>
+
 <head>
-    <link rel="stylesheet" type="text/css" href="./src/styles/css/main.css">
-    <!-- Boostrap CDN -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- Over-the-top favicon specifications -->
-    <link rel="apple-touch-icon" sizes="57x57" href="src/images/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="src/images/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="src/images/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="src/images/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="src/images/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="src/images/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="src/images/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="src/images/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="src/images/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="src/images/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="src/images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="src/images/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="src/images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="src/images/favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="src/images/favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <title>Campbell Phalen</title>
+  <link rel="stylesheet" type="text/css" href="./src/styles/css/main.css" />
+  <!-- Boostrap CDN -->
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"
+  />
+  <!-- Over-the-top favicon specifications -->
+  <link
+    rel="apple-touch-icon"
+    sizes="57x57"
+    href="src/images/favicon/apple-icon-57x57.png"
+  />
+  <link
+    rel="apple-touch-icon"
+    sizes="60x60"
+    href="src/images/favicon/apple-icon-60x60.png"
+  />
+  <link
+    rel="apple-touch-icon"
+    sizes="72x72"
+    href="src/images/favicon/apple-icon-72x72.png"
+  />
+  <link
+    rel="apple-touch-icon"
+    sizes="76x76"
+    href="src/images/favicon/apple-icon-76x76.png"
+  />
+  <link
+    rel="apple-touch-icon"
+    sizes="114x114"
+    href="src/images/favicon/apple-icon-114x114.png"
+  />
+  <link
+    rel="apple-touch-icon"
+    sizes="120x120"
+    href="src/images/favicon/apple-icon-120x120.png"
+  />
+  <link
+    rel="apple-touch-icon"
+    sizes="144x144"
+    href="src/images/favicon/apple-icon-144x144.png"
+  />
+  <link
+    rel="apple-touch-icon"
+    sizes="152x152"
+    href="src/images/favicon/apple-icon-152x152.png"
+  />
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="src/images/favicon/apple-icon-180x180.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="192x192"
+    href="src/images/favicon/android-icon-192x192.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="src/images/favicon/favicon-32x32.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="96x96"
+    href="src/images/favicon/favicon-96x96.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="src/images/favicon/favicon-16x16.png"
+  />
+  <link rel="manifest" href="src/images/favicon/manifest.json" />
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta
+    name="msapplication-TileImage"
+    content="src/images/favicon/ms-icon-144x144.png"
+  />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Campbell Phalen</title>
 </head>
+
 <body>
-    <section class="intro">
-        <h2>Campbell Phalen</h2>
-        <h3>Computer Scientist | Software Engineer</h3>
-    </section>
-    <br>
-    <section class="bio">
-        <header>About me</header>
-        <p>I'm a first year at The University of Pennsylvania, studying Networked Social Systems Engineering (which is essentially applied computer science). I'm originally from Chicago and I love to work with computers. However, I also have some other interests &mdash; lacrosse, tech theater, math, learning Chinese, roller coasters, video games, etc. &mdash; Hopefull this page will not only highlight some of my experience, but also give you a holistic depiction of who I am!</p>
-    </section>
-    <br>
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a class="nav-link active Projects-button" onclick="setState('Projects')">Projects</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link Activities-button" onclick="setState('Activities')">Activities</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link Work-button" onclick="setState('Work')">Work</a>
-        </li>
+  <section class="intro">
+    <h2>Campbell Phalen</h2>
+    <h3>Computer Scientist | Software Engineer</h3>
+  </section>
+  <br />
+  <section class="bio">
+    <header>About me</header>
+    <p>
+      I'm a second year at The University of Pennsylvania, studying Networked
+      Social Systems Engineering. I'm originally from Chicago and I love working
+      with computers. I also have some other interests such as &mdash; lacrosse,
+      tech theater, math, and learning Chinese.
+    </p>
+  </section>
+  <br />
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active Projects-button" onclick="setState('Projects')"
+        >Projects</a
+      >
+    </li>
+    <li class="nav-item">
+      <a class="nav-link Activities-button" onclick="setState('Activities')"
+        >On-campus</a
+      >
+    </li>
+    <li class="nav-item">
+      <a class="nav-link Work-button" onclick="setState('Work')">Work</a>
+    </li>
+  </ul>
+  <br />
+  <section class="Projects">
+    <header>Projects</header>
+    <ul>
+      <li>
+        <header>Schellings Model of Housing Segregation</header>
+        <p>
+          For my final project in a Function Programming course I also took at
+          the Univeristy of Chicago Masters in Computer Science Program, we
+          designed an application that would model housing segregation. The
+          application itself is really interesting to play around with, and
+          better yet it's written in Haskell which, after this course, is a
+          favorite language of mine. I uploaded the source code here:
+          <a href="https://github.com/cphalen/SchellingsModel"
+            >https://github.com/cphalen/SchellingsModel</a
+          >. If you have Haskell downloaded feel free to give it a run!
+        </p>
+      </li>
+      <li>
+        <header>Women in STEM Website</header>
+        <p>
+          In collaboration with the WiSTEM (Women in STEM) club at my school, I
+          worked with another student to create a NodeJS website for the WiSTEM
+          club. The website would allow users to discuss opprotunities and
+          experiences releveant to women operating in the predominantly-male
+          world of STEM. Our plan was to roll this website out across schools in
+          the Chicagoland area. In the end, the club leaders decided they wanted
+          to go in a different direction with the website, but I've included the
+          source code here:
+          <a href="https://github.com/cphalen/WiSTEM"
+            >https://github.com/cphalen/WiSTEM</a
+          >
+        </p>
+      </li>
+      <li>
+        <header>Student Council Website</header>
+        <p>
+          I'm in my 3rd year of operating my school's Student Council website.
+          Working on this website has been an exercise in versatility: whenever
+          the Student Council had a request I had to find some way to work it on
+          the site. As of now, the website supports a system for voting that the
+          school implements during Student Council elections, a system for class
+          offiers to distribute information, a virtual suggestion box, and even
+          a platform for users to sell their used books to incoming students.
+          The website implements PHP and MySQL, take a look at
+          <a href="https://sc.ucls.uchicago.edu"
+            >https://sc.ucls.uchicago.edu</a
+          >
+        </p>
+      </li>
+      <li>
+        <header>Mathematics in LaTeX</header>
+        <p>
+          I'm enrolled in a topics of mathematics course at my school this year.
+          Formally, we do mostly linear algebra and our plan is to continue with
+          multivariable calculus in the winter. However, we also have weekly
+          problem sets that are more focused on real analysis. My teacher has
+          encouraged the class to write up our solutions in LaTeX &mdash; this
+          way we have a digital record of all our proven theorems as well as a
+          way to revise our proofs after an initial write-up. The other benefit
+          is, of course, that we were introduced to the beautiful world of LaTeX
+          formatting! After six or so weeks of writing up these problem sets, I
+          ended up with a number of LaTeX documents chalked full of math. I've
+          uploaded the whole lot here, go take a look if it piques your
+          interest:
+          <a href="http://seas.upenn.edu/~cphalen/latex"
+            >http://seas.upenn.edu/~cphalen/latex</a
+          >.
+        </p>
+      </li>
+      <li>
+        <header>Star Trek Database</header>
+        <p>
+          I took a databases course at the University of Chicago Masters in
+          Computer Science program junior year and, as my final project, I
+          created a webstie for storing all revelant information for perhaps my
+          favorite TV series: Star Trek! The course specialized in relational
+          databases, so we used MySQL; although the frontend might not
+          demonstrate this directly, there are a number of stored procedures and
+          constraints being run in the background. I also really took advantage
+          of Bootstrap styles (as I did on this website) to compensate for my
+          bad sense of design! Go check out this project at
+          <a href="http://mpcs53001.cs.uchicago.edu/~cphalen"
+            >https://mpcs53001.cs.uchicago.edu/~cphalen</a
+          >
+        </p>
+      </li>
+      <li>
+        <header>Prep Hoops Voting Bot</header>
+        <p>
+          Junior fall a basketball player from my school was selected along with
+          7 or so other basketball players in the state to be a part of an
+          online pool on the Prep Hoops website. So, I decided it would be
+          worthwhile to repurpose Selenium WebDriver, a technology I had been
+          using at work which allows you manipulate a web browser. I was able to
+          quickly write a script that voted for my classmate about 8-10 times a
+          minute, and because each driver was distinct, we could vote multiple
+          times from the same machine. Unfortunately, our tactics weren't quite
+          enough to win our classmate the victory! But we still placed about
+          4000 votes and had a lot of fun. I uploaded to Python code to this
+          address if you're curious:
+          <a href="https://github.com/cphalen/PrepHoopsVoting"
+            >https://github.com/cphalen/PrepHoopsVoting</a
+          >
+        </p>
+      </li>
     </ul>
-    <br>
-    <section class="Projects">
-        <header>Projects</header>
-        <p>I thought it might be fun to start with some of my current and previous projects. These are definitly moments in which I took a break from my obligations and instead really used my passion for fun!</p>
-        <ul>
-            <li>
-                <header>Star Trek Database</header>
-                <p>I took a databases course at the University of Chicago Masters in Computer Science program last year and, as my final project, I created a webstie for storing all revelant information for perhaps my favorite TV series: Star Trek! The course specialized in relational databases, so we used MySQL; although the frontend might not demonstrate this directly, there are a number of stored procedures and constraints being run in the background. I also really took advantage of Bootstrap styles (as I did on this website) to compensate for my bad sense of design! Go check out this project at <a href="http://mpcs53001.cs.uchicago.edu/~cphalen">https://mpcs53001.cs.uchicago.edu/~cphalen</a></p>
-            </li>
-            <li>
-                <header>Prep Hoops Voting Bot</header>
-                <p>Last fall a basketball player from my school was selected along with 7 or so other basketball players in the state to be a part of an online pool on the Prep Hoops website. So, I decided it would be worthwhile to repurpose Selenium WebDriver, a technology I had been using at work which allows you manipulate a web browser. I was able to quickly write a script that voted for my classmate about 8-10 times a minute, and because each driver was distinct, we could vote multiple times from the same machine. Unfortunately, our tactics weren't quite enough to win our classmate the victory! But we still placed about 4000 votes and had a lot of fun. I uploaded to Python code to this address if you're curious: <a href="https://github.com/cphalen/PrepHoopsVoting">https://github.com/cphalen/PrepHoopsVoting</a></p>
-            </li>
-            <li>
-                <header>Schellings Model of Housing Segregation</header>
-                <p>For my final project in a Function Programming course I also took at the Univeristy of Chicago Masters in Computer Science Program, we designed an application that would model housing segregation. The application itself is really interesting to play around with, and better yet it's written in Haskell which, after this course, is a favorite language of mine. I uploaded the source code here: <a href="https://github.com/cphalen/SchellingsModel">https://github.com/cphalen/SchellingsModel</a>. If you have Haskell downloaded feel free to give it a run!</p>
-            </li>
-            <li>
-                <header>Women in STEM Website</header>
-                <p>In collaboration with the WiSTEM (Women in STEM) club at my school, I worked with another student to create a NodeJS website for the WiSTEM club. The website would allow users to discuss opprotunities and experiences releveant to women operating in the predominantly-male world of STEM. Our plan was to roll this website out across schools in the Chicagoland area. In the end, the club leaders decided they wanted to go in a different direction with the website, but I've included the source code here: <a href="https://github.com/cphalen/WiSTEM">https://github.com/cphalen/WiSTEM</a></p>
-            </li>
-            <li>
-                <header>Mathematics (Real Analysis) in LaTeX!</header>
-                <p>I'm enrolled in a topics of mathematics course at my school this year. Formally, we do mostly linear algebra and our plan is to continue with multivariable calculus in the winter. However, we also have weekly problem sets that are more focused on real analysis. My teacher has encouraged the class to write up our solutions in LaTeX &mdash; this way we have a digital record of all our proven theorems as well as a way to revise our proofs after an initial write-up. The other benefit is, of course, that we were introduced to the beautiful world of LaTeX formatting! After six or so weeks of writing up these problem sets, I ended up with a number of LaTeX documents chalked full of math. I've uploaded the whole lot here, go take a look if it piques your interest: <a href="https://cphalen.github.io/LaTeX">https://cphalen.github.io/LaTeX</a>.</p>
-            </li>
-            <li>
-                <header>Student Council Website</header>
-                <p>I'm in my 3rd year of operating my school's Student Council website. Working on this website has been an exercise in versatility: whenever the Student Council had a request I had to find some way to work it on the site. As of now, the website supports a system for voting that the school implements during Student Council elections, a system for class offiers to distribute information, a virtual suggestion box, and even a platform for users to sell their used books to incoming students. The website implements PHP and MySQL, take a look at <a href="https://sc.ucls.uchicago.edu">https://sc.ucls.uchicago.edu</a></p>
-            </li>
-        </ul>
-    </section>
+  </section>
 
-    <section class="Activities">
-        <header>Activities</header>
-        <p>If you're interested in what I spend my time doing when I'm not in the classroom or in the office, here's a short rundown.</p>
-        <ul>
-            <li>
-                <header>Lacrosse</header>
-                <p>I've been a fairly serious lacrosse player since 2nd grade &mdash; that's 10+ years now! I played the sport for probably 4 years before realizing that I wanted to play the position of goalie. I think my interest in being a goalie started when my coach mentioend that it's a lot less running. What I hadn't realized at the time was that playing goalie in lacrosse is basically an open invitation to have rubber balls be thrown at you at 80 mph without altogether that much protection. I had a couple bouts where I thoguht maybe lacrosse goalie wasn't for me, but I'm really glad I stuck with it. Ever since I began high school I started playing with a fairly competitive team. The practices are held 90 minutes away from my home, but it's worth the drive to play with some of the best players in the state of Illinois. We travel nationally and try to make a name for lacrosse in the Midewst. I think easily my favorite part of the sport is plying with a group of really talanted kids who support one another on and off the field. I mean that quite literally: I've spend a lot of hours helping my teammates finish math homework and study for the ACT!</p>
-            </li>
-            <li>
-                <header>Theater</header>
-                <p>Theater isn't something people normally expect from me. I have a lot of basis in STEM in almost every faccet of my life, however the arts still hold a special place in my heart. I grew up watching my brother perform in shows, and I always just loved being in the theater. This is why I started lights crew in 6th grade. I had originally intended on acting, but I was too nervous. It took me up until junior year to actually step on stage. As an 11th grader I finally felt confident enough to perform, and I played the lead male role of Doctor Seward in Dracula. However, I don't want to undermine lights crew. If I had to pick, I would say lights crew is really what draws me to theater. It's a trade I've had to develope over almost 6 years now, and it's something that's a really big part of my identity. I'm definitly not naturally gifted in the relam of design, but after numerous botched lighting designs and mistimed cues, I eventually found my way. Now, I'm one of the lights masters, and I am responsible for training a new generation of lights crew memebrs! All of which have quickly become more talanted than I!</p>
-            </li>
-            <li>
-                <header>Movies</header>
-                <p>I know this isn't quite an activity, but I don't think anyone could truly know me if they didn't have first hand experience with my passion for (both good and bad) filmmaking. I've never made my own movies, but I have always had a lot of respect for people who do. I think the medium is a really real and visceral way to protray experiences, emotions, and memories. I've collected a number of miscellaneous quotes from who-knows how many movies over the years. Some of my favorite are 2009's Star Trek when Captain Pike tells Kirk "your father was the captain of a starship for 10 minutes and saved 700 lives, I dare you to do better" or in The Immitation Game when Joan Clarke tells Allen Turing "if you wish you could have been normal... I can promise you I do not. The world is an infinitely better place precisely because you weren't." I've managed to place nerdy references to HAL 9000, Morpheus, Cobb and others all throughout my life &mdash; I simply wouldn't have it any other way!</p>
-            </li>
-        </ul>
-    </section>
+  <section class="Activities">
+    <header>On-campus</header>
+    <p>
+      If you're interested in what I spend my time doing when I'm not in the
+      classroom or in the office, here's a short rundown.
+    </p>
+    <ul>
+      <li>
+        <header>Penn Labs</header>
+        <p>
+          Penn Labs is a dedicated team of designers, developers, and engineers
+          who build systems to improve student life on campus. Our solutions
+          help tens of thousands of students with everything from
+          extracurricular exploration and campus involvement, to course planning
+          and lifestyle conveniences. One major project I contribute to is a
+          Python Django web-application called PennClubs that acts as a registry
+          for all student organizations on campus. We completed a major suite of
+          online services that allow new students to engage with on-campus
+          organizations despite being unable to travel to campus due to COVID-19
+          health restrictions. To read more about Penn Labs you can find us here
+          <a href="https://pennlabs.org/">https://pennlabs.org</a>
+          if you want to checkout PennClubs specifically, our web application is
+          available at
+          <a href="https://pennclubs.com/">https://pennclubs.com</a>
+        </p>
+      </li>
+      <li>
+        <header>CIS 120 Teaching Assistant</header>
+        <p>
+          On-campus I work as a teaching assitant for an introductory computer
+          science course called CIS 120. This is a course that I took during my
+          freshman fall, and ever since I have been a TA. I teach a weekly small
+          group lecture to around 20 students whose assignments and exams I am
+          also responsible for grading. Additionally, I hold weekly office hours
+          to meet with students and help them work through the subject material.
+          Being a TA for a computer science course has been a great way to give
+          back to the computer science community at Penn while also meeting lots
+          of really wonderful programmers. You can read more about CIS 120 here
+          <a href="https://www.seas.upenn.edu/~cis120/current/"
+            >https://www.seas.upenn.edu/~cis120/current</a
+          >
+        </p>
+      </li>
+    </ul>
+  </section>
 
-    <section class="Work">
-        <header>Work</header>
-        <p>I would just like to underscore a few of my working experiences! I've worked with a number of really interesting people a couple of really interesting places. If you'd like more of a "TL;DR" you can absolutely take a look at my resume (formatted in LaTeX!): <a href="https://cphalen.github.io/resume.pdf">https://cphalen.github.io/resume.pdf</a></p>
-        <ul>
-            <li>
-                <header>Citadel, LLC</header>
-                <p>I was a software engineering intern for two consecutive summers at Citadel. I worked with professionals at the firm and was given real work. In my first summer I worked 7 weeks 8am-6pm on Gloal Quantitative Strategies &mdash; this is the larger long term equities trading team. I developed software that consolidated tasks and simulations running on a number of servers and displayed data in a single dashboard. I was invited back for a second year and worked with the Core Reporting team. With Core Reporting I built software that tracked discontinuties between market and in-house historical trade data. If I were to sum up the entire experience, I think the people were the most important part. I was able to work alongside some really expert and experienced developers. They had not only a lot of wisdom to share, but were also very welcoming, humorous, and a lot of fun to work with.</p>
-            </li>
-            <li>
-                <header>Starchup</header>
-                <p>This was my first ever working experience. I always like to tell the the story that I was made fun of for not being able to drive! When I started working at Starchup I was 15. I spent about 10 weeks working with this 6-person company the summer after my Freshman year. There was a lot that was new to me, but I was fortunate in that I was assigned real work; I spent the majority of the summer designing an end-to-end testing suite for the company's main product. Doing real work was really a formative experience because it allowed me to really value my work for the first time. The company's product was essentailly Uber for dry cleaning, unfortuntely the company has gone under, but I am very thankful to the people there for welcoming me into the work force for the very first time. </p>
-            </li>
-            <li>
-                <header>Carbonless Community</header>
-                <p>I currently work as the CTO for a 3-person company called Carbonless Community. I was approached by a parent in my high school community to help promote clean energy usage. Alongside a few other high school programmers we assembled a professional-grade website advocating for green energy practices. We also wrote reverse energy auction software for low-price energy procurement. Finally we present ComeEd sales metrics in a cohesive manner (which is harder than you might expect! ComEd really doesn't want you to know how much everyone is paying for their energy!).</p>
-            </li>
-            <li>
-                <header>Other</header>
-                <p>I have some other intresting work experiences, mostly at startups. I currently work with a company in the insurance sector called Purple Ant that is designing IOT sensors to protect home owners. I also worked previously with a company called Waaves that was based out of University of Chicago Booth buisness school. Our mission was to make collaboration easier for music producers. We pitched the idea to professors at Booth and admitted to the New Venture Challenge. Here we made it to the final round before being cut! I learned a lot about development as always, but perhaps more importantly I learned a lot about entrepenuerism and buisness marketing.</p>
-            </li>
-        </ul>
-    </section>
+  <section class="Work">
+    <header>Work</header>
+    <ul>
+      <li>
+        <header>Blizzard Entertainment</header>
+        <p>
+          I spent the summer of 2020 working remotely at Blizzard Entertainment.
+          During the summer, I wrote C++ code communicating with in-house
+          software to build out new server features for one of our video games.
+          Most notably, I helped decrease wait times for players while still
+          maintaining fairness between teams. I also got to try my hand in
+          making some creative decisions about player experience. This was
+          another intriguing way to introduce some of the social science and
+          psychology we study in my major into my work. Interning at Blizzard
+          was also a really rewarding experience because I got to show up for
+          work every day knowing that the products and features I was working on
+          would be thoroughly enjoyed and appreciated by our players.
+        </p>
+      </li>
+      <li>
+        <header>Citadel, LLC</header>
+        <p>
+          I was a software engineering intern for three consecutive summers at
+          Citadel. I worked with professionals at the firm and was given real
+          work. In my first summer I worked 7 weeks 8am-6pm on Gloal
+          Quantitative Strategies &mdash; this is the larger long term equities
+          trading team. I developed software that consolidated tasks and
+          simulations running on a number of servers and displayed data in a
+          single dashboard. I was invited back for a second year and worked with
+          the Core Reporting team. With Core Reporting I built software that
+          tracked discontinuties between market and in-house historical trade
+          data. If I were to sum up the entire experience, I think the people
+          were the most important part. I was able to work alongside some really
+          expert and experienced developers. They had not only a lot of wisdom
+          to share, but were also very welcoming, humorous, and a lot of fun to
+          work with.
+        </p>
+      </li>
+      <li>
+        <header>Starchup</header>
+        <p>
+          This was my first ever working experience. I always like to tell the
+          the story that I was made fun of for not being able to drive! When I
+          started working at Starchup I was 15. I spent about 10 weeks working
+          with this 6-person company the summer after my Freshman year. There
+          was a lot that was new to me, but I was fortunate in that I was
+          assigned real work; I spent the majority of the summer designing an
+          end-to-end testing suite for the company's main product. Doing real
+          work was really a formative experience because it allowed me to really
+          value my work for the first time. The company's product was
+          essentailly Uber for dry cleaning, unfortuntely the company has gone
+          under, but I am very thankful to the people there for welcoming me
+          into the work force for the very first time.
+        </p>
+      </li>
+      <li>
+        <header>Carbonless Community</header>
+        <p>
+          I currently work as the CTO for a 3-person company called Carbonless
+          Community. I was approached by a parent in my high school community to
+          help promote clean energy usage. Alongside a few other high school
+          programmers we assembled a professional-grade website advocating for
+          green energy practices. We also wrote reverse energy auction software
+          for low-price energy procurement. Finally we present ComeEd sales
+          metrics in a cohesive manner (which is harder than you might expect!
+          ComEd really doesn't want you to know how much everyone is paying for
+          their energy!).
+        </p>
+      </li>
+    </ul>
+  </section>
 
-    <footer class="page-footer font-small blue pt-4">
-      <div class="footer-copyright text-center py-3"> cphalen@seas.upenn.edu | <a href="https://github.com/cphalen">github.com/cphalen</a> | <a href="https://www.linkedin.com/in/campbell-phalen">linkedin.com/in/campbell-phalen</a>
-      </div>
-    </footer>
+  <footer class="page-footer font-small blue pt-4">
+    <div class="footer-copyright text-center py-3">
+      cphalen@seas.upenn.edu |
+      <a href="https://github.com/cphalen">github.com/cphalen</a> |
+      <a href="https://www.linkedin.com/in/campbell-phalen"
+        >linkedin.com/in/campbell-phalen</a
+      >
+    </div>
+  </footer>
 
-    <br>
-
+  <br />
 </body>
 <!-- jQuery CDN -->
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"
+></script>
 <!-- custom JS -->
 <script src="./src/scripts/main.js"></script>
